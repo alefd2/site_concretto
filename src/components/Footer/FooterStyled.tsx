@@ -3,14 +3,27 @@ import { styled } from "styled-components";
 export const FooterStyled = styled.footer`
   height: auto;
   width: 100%;
-  background: #222b56;
+  background: #282727;
 
   display: flex;
   align-items: flex-start;
-  justify-content: start;
+  flex-direction: column;
   color: white;
   padding: 2.5% 10%;
-  gap: 8%;
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    gap: 30px;
+  }
+
+  img {
+    width: 300px;
+    height: auto;
+  }
 
   a {
     color: white;
@@ -22,9 +35,30 @@ export const FooterStyled = styled.footer`
     }
   }
 
-  .group-column {
-    width: fit-content;
+  .group-column-header {
     display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    flex-direction: row;
+
+    .social-icons {
+      display: flex;
+      gap: 20px;
+      a {
+        svg {
+          height: 30px;
+          width: auto;
+        }
+      }
+    }
+  }
+
+  .group-column {
+    display: flex;
+    width: 100%;
+    justify-content: start;
     flex-direction: row;
   }
 
@@ -33,14 +67,12 @@ export const FooterStyled = styled.footer`
     width: max-content;
     margin-bottom: 1.275rem;
     justify-content: flex-start;
-    margin-right: 36px;
-  }
-
-  .group-column .space:nth-child(-n + 2) {
-    gap: 10px;
+    margin-right: 10%;
   }
 
   .footer-group {
+    display: flex;
+    width: 100%;
     display: flex;
     flex-direction: column;
     max-width: 252px;
@@ -56,7 +88,7 @@ export const FooterStyled = styled.footer`
   }
 
   h6 {
-    color: #edf901;
+    color: #f0f0f0;
     font-size: 16px;
     font-weight: 700;
     margin-bottom: 9px;
@@ -65,7 +97,7 @@ export const FooterStyled = styled.footer`
   @media (max-width: 1300px) {
     img {
       height: auto;
-      width: 100px;
+      width: 200px;
     }
   }
 
@@ -76,7 +108,7 @@ export const FooterStyled = styled.footer`
   @media (max-width: 1020px) {
     img {
       height: auto;
-      width: 100px;
+      width: 180px;
     }
 
     .group-column div a {
@@ -91,7 +123,7 @@ export const FooterStyled = styled.footer`
   @media (max-width: 882px) {
     img {
       height: auto;
-      width: 100px;
+      width: 140px;
     }
 
     .group-column div a {
@@ -108,24 +140,27 @@ export const FooterStyled = styled.footer`
     font-size: 12px;
     justify-content: space-between;
 
-    .group-column {
-      flex-direction: row;
+    .social-icons {
+      a {
+        svg {
+          height: 10px;
+          width: auto;
+        }
+      }
+    }
 
+    .group-column {
       width: 100%;
       justify-content: space-between;
     }
 
-    .group-column:nth-child(3) {
-      flex-direction: row;
-    }
-
     .group-column .footer-group:nth-child(1) {
-      width: 60%;
+      width: 100%;
     }
 
     img {
       height: auto;
-      width: 60px;
+      width: 100px;
     }
     flex-direction: column;
     height: max-content;
