@@ -5,12 +5,7 @@ export default function AboutUs() {
   return (
     <AboutUsStyled>
       <div>
-        <Image
-          src="/assets/icons/icon.png"
-          height={100}
-          width={100}
-          alt="logo"
-        />
+        <img src="/assets/icons/icon.png" />
       </div>
       <h6>O que é a concretto ?</h6>
       <p>
@@ -23,7 +18,7 @@ export default function AboutUs() {
 }
 export const AboutUsStyled = styled.div`
   height: 600px;
-  background: #e4e4e4;
+  background: #ffffffe6;
 
   display: flex;
   flex-direction: column;
@@ -47,6 +42,7 @@ export const AboutUsStyled = styled.div`
   }
 
   p {
+    max-width: 600px;
     color: #000;
     text-align: center;
     font-size: 22px;
@@ -54,6 +50,5 @@ export const AboutUsStyled = styled.div`
     font-weight: 400;
     line-height: normal;
     letter-spacing: 2.2px;
-    max-width: 1300px;
   }
 `;

@@ -21,7 +21,7 @@ export const FooterStyled = styled.footer`
   }
 
   img {
-    width: 300px;
+    width: 250px;
     height: auto;
   }
 

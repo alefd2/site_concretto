@@ -6,6 +6,7 @@ import styled from "styled-components";
 import Header from "@/components/Home/Header/BannerHome";
 import AboutUs from "@/components/Home/AboutUs";
 import ContentPage from "@/components/Home/ImageContent";
+import ActionPage from "@/components/Home/Action";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,6 +23,7 @@ export default function Home() {
         <Header />
         <AboutUs />
         <ContentPage />
+        <ActionPage />
       </HomeStyled>
     </>
   );

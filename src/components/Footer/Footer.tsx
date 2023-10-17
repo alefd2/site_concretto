@@ -8,10 +8,8 @@ export default function Footer() {
     <FooterStyled>
       <div className="wrapper">
         <div className="group-column-header">
-          <Image
+          <img
             src="/assets/icons/logoWhite.png"
-            width={199}
-            height={141}
             alt="Logotipo concretto"
             id="footer-logo"
           />
