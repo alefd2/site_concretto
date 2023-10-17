@@ -34,7 +34,7 @@ const Navigation = () => {
             <Link href="/">Home</Link>
           </li>
           <li>
-            <Link href="/#concretto">Concretto</Link>
+            <Link href="/#about">Concretto</Link>
           </li>
           <li>
             <Link href="/#funcionalidades">Funcionalidades</Link>
@@ -44,7 +44,7 @@ const Navigation = () => {
           </li>
           <li>
             <ActionItem className="action">
-              <Link href="/#contato">Experimente grátis</Link>
+              <Link href="/#baixar">Experimente grátis</Link>
             </ActionItem>
           </li>
         </div>

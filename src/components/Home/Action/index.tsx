@@ -3,8 +3,11 @@ import styled from "styled-components";
 
 export default function ActionPage() {
   return (
-    <ActionStyled>
+    <ActionStyled id="baixar">
       <h6>Baixe grátis</h6>
+      <p>
+        Crie a sua conta gratuitamente agora e começe a descomplicar a sua obra!
+      </p>
       <div className="wrapper-row">
         <div className="image-wrapper">
           <img src="/assets/images/celular.png" alt="" />
@@ -48,10 +51,16 @@ export const ActionStyled = styled.div`
   height: auto;
   width: 100%;
   background: #ffffff;
+  text-align: center;
 
   align-items: center;
   justify-content: center;
   padding: 100px 0;
+
+  p {
+    margin: 10px 0;
+    color: #464646;
+  }
 
   .playstore img {
     width: 150px;
@@ -100,7 +109,7 @@ export const ActionStyled = styled.div`
     line-height: normal;
   }
 
-  p {
+  .column-1 p {
     max-width: 600px;
     color: #000;
     text-align: center;

@@ -7,6 +7,7 @@ import Header from "@/components/Home/Header/BannerHome";
 import AboutUs from "@/components/Home/AboutUs";
 import ContentPage from "@/components/Home/ImageContent";
 import ActionPage from "@/components/Home/Action";
+import AdvantagesPage from "@/components/Home/AdvantagesPage";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,6 +25,7 @@ export default function Home() {
         <AboutUs />
         <ContentPage />
         <ActionPage />
+        <AdvantagesPage />
       </HomeStyled>
     </>
   );

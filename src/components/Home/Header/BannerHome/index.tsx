@@ -10,8 +10,8 @@ const Banner = () => {
           Nós revolucionamos a forma de realizar compras e gerenciar obras.
         </h1>
         <div className="button-wrapper-a">
-          <a href="#">Ver vídeo</a>
-          <a href="#">Criar conta grátis</a>
+          <a href="#video">Ver vídeo</a>
+          <a href="#baixar">Criar conta grátis</a>
         </div>
       </BannerText>
     </BannerContainer>

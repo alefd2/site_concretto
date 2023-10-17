@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export default function AboutUs() {
   return (
-    <AboutUsStyled>
+    <AboutUsStyled id="about">
       <div>
         <img src="/assets/icons/icon.png" />
       </div>
