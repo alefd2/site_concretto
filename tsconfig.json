@@ -17,6 +17,13 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/pages/_document.js"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "src/pages/_document.js",
+    "src/components/BackgroundSlider/CarrouselDenteMobile.jsx",
+    "src/components/BackgroundSlider/CustonCarrousel.jsx"
+  ],
   "exclude": ["node_modules"]
 }

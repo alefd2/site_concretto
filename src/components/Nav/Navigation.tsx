@@ -4,7 +4,8 @@ import Link from "next/link";
 import styled from "styled-components";
 import { useMediaQuery } from "react-responsive";
 
-import logo from "../../../public/assets/logo.png";
+import logo from "../../../public/assets/logo-marca.png";
+import { ItensNav } from "./ItensNav";
 
 const Navigation = () => {
   const isMobile = useMediaQuery({ maxWidth: 768 });
@@ -30,21 +31,18 @@ const Navigation = () => {
           </li>
         </div>
         <div className={`nav ${isMobile && menuOpen ? "open" : ""}`}>
-          <li>
-            <Link href="/">Home</Link>
-          </li>
-          <li>
-            <Link href="/#about">Concretto</Link>
-          </li>
-          <li>
+          {/* <li>
             <Link href="/#funcionalidades">Funcionalidades</Link>
           </li>
           <li>
             <Link href="/#contato">Contato</Link>
-          </li>
+          </li> */}
+
+          {<ItensNav link="/" routeName="Home" />}
+          {<ItensNav link="/#us" routeName="Nosso Propósito" />}
           <li>
-            <ActionItem className="action">
-              <Link href="/#baixar">Experimente grátis</Link>
+            <ActionItem href="/#baixar" className="action">
+              <Link href="/#baixar">Baixe o App</Link>
             </ActionItem>
           </li>
         </div>
@@ -55,12 +53,11 @@ const Navigation = () => {
 
 const NavContentStyled = styled.nav`
   width: 100vw;
-  position: absolute;
-
   ul {
+    width: 100%;
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
     margin: 0 auto;
     height: 100px;
     text-decoration: none;
@@ -70,19 +67,25 @@ const NavContentStyled = styled.nav`
     background-color: transparent;
   }
 
-  .branding,
   .nav {
     width: 100%;
     display: flex;
     align-items: center;
+    justify-content: end;
     gap: 23px;
 
     li a {
       width: auto;
-      color: #fff;
+      color: #000;
       font-size: 16px;
       font-weight: 700;
       line-height: normal;
+    }
+
+    li a:hover {
+      width: auto;
+      color: #ff3334;
+      transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
     }
   }
 
@@ -121,7 +124,7 @@ const NavContentStyled = styled.nav`
   }
 `;
 
-const ActionItem = styled.div`
+const ActionItem = styled.a`
   display: flex;
   width: 100%;
   padding: 12px 22px;
@@ -130,13 +133,20 @@ const ActionItem = styled.div`
   border-radius: 24px;
   align-items: center;
   gap: 10px;
+  cursor: pointer;
 
   a {
-    color: #fff;
+    color: #fff !important;
     font-size: 16px;
     font-weight: 700;
     line-height: normal;
     text-decoration: none;
+  }
+
+  &:hover {
+    color: #e43333 !important;
+    background-color: #af0e0e;
+    transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
   }
 `;
 
