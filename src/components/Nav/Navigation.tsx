@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import styled from "styled-components";
 import { useMediaQuery } from "react-responsive";
-
 import logo from "../../../public/assets/logo-marca.png";
 import { ItensNav } from "./ItensNav";
 
@@ -16,137 +15,208 @@ const Navigation = () => {
   };
 
   return (
-    <NavContentStyled>
-      <ul>
+    <NavContainer>
+      <NavContentStyled>
         <div className="branding">
           {isMobile && (
-            <li>
-              <button onClick={toggleMenu} className="mobile-menu-button">
-                icone
-              </button>
-            </li>
+            <MobileMenuButton onClick={toggleMenu}>
+              <span>☰</span>
+            </MobileMenuButton>
           )}
-          <li>
-            <Image src={logo} alt="a" />
-          </li>
+          <LogoContainer>
+            <Image src={logo} alt="Logo" />
+          </LogoContainer>
         </div>
-        <div className={`nav ${isMobile && menuOpen ? "open" : ""}`}>
-          {/* <li>
-            <Link href="/#funcionalidades">Funcionalidades</Link>
-          </li>
-          <li>
-            <Link href="/#contato">Contato</Link>
-          </li> */}
-
-          {<ItensNav link="/" routeName="Home" />}
-          {<ItensNav link="/#us" routeName="Nosso Propósito" />}
-          <li>
-            <ActionItem href="/#baixar" className="action">
+        {isMobile && menuOpen && (
+          <MobileMenu>
+            {isMobile && (
+              <div className="wrapper_menu_mobile">
+                <MobileMenuButton onClick={toggleMenu}>
+                  <span>x</span>
+                </MobileMenuButton>
+                <p>Menu</p>
+              </div>
+            )}
+            <ItensNav toggleMenu={toggleMenu} link="/" routeName="Home" />
+            <ItensNav
+              toggleMenu={toggleMenu}
+              link="/#us"
+              routeName="Nosso Propósito"
+            />
+            <li onClick={toggleMenu} className="action">
               <Link href="/#baixar">Baixe o App</Link>
-            </ActionItem>
-          </li>
-        </div>
-      </ul>
-    </NavContentStyled>
+            </li>
+          </MobileMenu>
+        )}
+        {!isMobile && (
+          <DesktopMenu>
+            <ItensNav toggleMenu={toggleMenu} link="/" routeName="Home" />
+            <ItensNav
+              toggleMenu={toggleMenu}
+              link="/#us"
+              routeName="Nosso Propósito"
+            />
+            <li onClick={toggleMenu} className="action">
+              <Link href="/#baixar">Baixe o App</Link>
+            </li>
+          </DesktopMenu>
+        )}
+      </NavContentStyled>
+    </NavContainer>
   );
 };
 
+const NavContainer = styled.div`
+  background: #fff;
+`;
+
 const NavContentStyled = styled.nav`
-  width: 100vw;
-  ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+
+  .wrapper_menu_mobile {
     width: 100%;
+    color: transparent;
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    align-items: center;
-    margin: 0 auto;
-    height: 100px;
-    text-decoration: none;
-    list-style-type: none;
-    max-width: 1300px;
-    border-bottom: 0.4 solid #1f1f1f;
-    background-color: transparent;
   }
 
-  .nav {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: end;
-    gap: 23px;
-
-    li a {
-      width: auto;
-      color: #000;
-      font-size: 16px;
-      font-weight: 700;
-      line-height: normal;
+  @media (max-width: 768px) {
+    .branding {
+      width: 100%;
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
     }
-
-    li a:hover {
-      width: auto;
-      color: #ff3334;
-      transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
-    }
-  }
-
-  li {
-    color: #460606;
-  }
-
-  a {
-    text-decoration: none;
-    color: #750707;
-  }
-
-  .mobile-menu-button {
-    background: none;
-    border: none;
-    font-size: 24px;
-    color: #fff;
-  }
-
-  .nav.open {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 100px;
-    left: 0;
-    background: #333;
-    width: 100%;
-  }
-
-  .nav.open li {
-    padding: 10px;
-  }
-
-  .nav.open a {
-    color: #fff;
   }
 `;
 
-const ActionItem = styled.a`
-  display: flex;
-  width: 100%;
-  padding: 12px 22px;
-  justify-content: flex-end;
-  background: var(--main-700, #f24041);
-  border-radius: 24px;
-  align-items: center;
-  gap: 10px;
+const MobileMenuButton = styled.button`
+  background: none;
+  border: none;
+  font-size: 24px;
   cursor: pointer;
 
-  a {
-    color: #fff !important;
+  span {
+    display: block;
+    color: #000;
+  }
+`;
+
+const LogoContainer = styled.div``;
+
+const MobileMenu = styled.div`
+  position: fixed;
+  width: 80%;
+  top: 0px;
+  right: 0;
+  height: 100%;
+  background: rgb(255, 255, 255);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border-radius: 20px 0 0 20px;
+
+  display: flex;
+  gap: 10px;
+
+  box-shadow: -15px -1px 32px 6px rgba(0, 0, 0, 0.26);
+  -webkit-box-shadow: -15px -1px 32px 6px rgba(0, 0, 0, 0.26);
+  -moz-box-shadow: -15px -1px 32px 6px rgba(0, 0, 0, 0.26);
+
+  li {
+    list-style: none;
+    color: #000;
+    padding: 10px 5px;
+    font-weight: 700;
+    border-radius: 8px;
+    width: 100%;
+    background-color: #dddddd4e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+
+  li:active,
+  li:hover {
+    background-color: #7c0e0e4e;
+    cursor: pointer;
+  }
+
+  li:last-child {
+    border: none;
+    background-color: transparent;
+  }
+
+  li.action a {
+    color: #fff;
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    border-radius: 8px;
+    background: #ff3334;
+    border: none;
+    transition: 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+
+  li.action a:hover {
+    color: #fff;
+    background: #911a1a;
+  }
+
+  @media (min-width: 769px) {
+    display: none;
+  }
+`;
+
+const DesktopMenu = styled.div`
+  display: flex;
+  gap: 40px;
+  align-items: center;
+
+  li {
+    color: #000;
     font-size: 16px;
+    font-style: normal;
     font-weight: 700;
     line-height: normal;
     text-decoration: none;
+    list-style: none;
+    transition: 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
   }
 
-  &:hover {
-    color: #e43333 !important;
-    background-color: #af0e0e;
-    transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  li:hover {
+    color: #ff3334;
+  }
+
+  li.action a {
+    color: #fff;
+    display: flex;
+    width: 186px;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 20px;
+    background: #ff3334;
+    transition: 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+
+  li.action a:hover {
+    color: #fff;
+    background: #911a1a;
   }
 `;
 

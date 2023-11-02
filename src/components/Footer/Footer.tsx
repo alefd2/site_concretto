@@ -2,6 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { FooterStyled } from "./FooterStyled";
 import { BsFacebook, BsInstagram } from "react-icons/bs";
+import play from "@/assets/images/advantages/play.png";
+import apple from "@/assets/images/advantages/apple.png";
 
 export default function Footer() {
   return (
@@ -13,35 +15,42 @@ export default function Footer() {
             alt="Logotipo concretto"
             id="footer-logo"
           />
-
-          <div className="social-icons">
-            <a href="https://www.instagram.com/concretto.tech/">
-              <BsInstagram />
-            </a>
-            <a href="https://www.facebook.com/concretto.tech">
-              <BsFacebook />
-            </a>
-          </div>
         </div>
 
         <div className="group-column">
-          <div className="footer-group">
+          <div style={{ width: "60%" }} className="footer-group">
             <h6>Endereço</h6>
             <p>Rua Vereador Benno Josão Kist - 206 Sala 03</p>
             <p>Santa Cruz do Sul/RS</p>
             <p>Rua Vereador Benno Josão Kist</p>
+            <div className="social-icons">
+              <a href="https://www.instagram.com/concretto.tech/">
+                <BsInstagram />
+              </a>
+              <a href="https://www.facebook.com/concretto.tech">
+                <BsFacebook />
+              </a>
+            </div>
           </div>
-          <div className="footer-group">
-            <h6>Telefone</h6>
-            <p>31 2007-9848</p>
+          <div style={{ width: "20%" }} className="footer-group">
+            <Link href={"/"}>Home</Link>
+            <Link href={"/purpose"}>Nosso Propósito</Link>
+            <Link href={"/appdonwload"}>Baixe o App</Link>
+            <Link href={"/policy"}>Politica de privacidade</Link>
           </div>
-          <div className="footer-group">
-            <h6>
-              <a href="#">Sobre a concretto</a>
-            </h6>
-            <h6>
-              <a href="#">Política de privacidade</a>
-            </h6>
+          <div style={{ width: "20%" }} className="footer-group">
+            <div className="wrapperAction">
+              <Link href={"/"}>
+                <Image src={apple} alt="apple" />
+              </Link>
+              <Link
+                href={
+                  "https://play.google.com/store/apps/details?id=br.com.concrettotech.mobileconcretto"
+                }
+              >
+                <Image src={play} alt="play" />
+              </Link>
+            </div>
           </div>
         </div>
       </div>

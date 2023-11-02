@@ -9,28 +9,6 @@ import Navigation from "../Nav/Navigation";
 function Layout({ children }: { children: ReactNode }) {
   const [isMobile, setIsMobile] = useState(false);
 
-  const router = useRouter();
-
-  //   useEffect(() => {
-  //     const handleResize = () => {
-  //       setIsMobile(window.innerWidth <= 1024);
-  //     };
-
-  //     handleResize();
-  //     window.addEventListener("resize", handleResize);
-
-  //     return () => window.removeEventListener("resize", handleResize);
-  //   }, []);
-
-  const currentURL = router.asPath;
-
-  const isNotMobbileCartFooter = () => {
-    if (currentURL == "/carrinho" && isMobile == true) {
-      return true;
-    }
-    return false;
-  };
-
   return (
     <>
       <Head>

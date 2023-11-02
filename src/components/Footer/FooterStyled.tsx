@@ -16,6 +16,7 @@ export const FooterStyled = styled.footer`
     flex-direction: column;
     width: 100%;
     max-width: 1300px;
+    justify-content: space-around;
     margin: 0 auto;
     gap: 30px;
   }
@@ -42,17 +43,6 @@ export const FooterStyled = styled.footer`
     align-items: center;
     margin: 0 auto;
     flex-direction: row;
-
-    .social-icons {
-      display: flex;
-      gap: 20px;
-      a {
-        svg {
-          height: 30px;
-          width: auto;
-        }
-      }
-    }
   }
 
   .group-column {
@@ -78,6 +68,20 @@ export const FooterStyled = styled.footer`
     max-width: 252px;
     height: 100%;
     width: max-content;
+    gap: 10px;
+
+    .social-icons {
+      margin-top: 20px;
+      width: 100%;
+      display: flex;
+      gap: 20px;
+      a {
+        svg {
+          height: 30px;
+          width: auto;
+        }
+      }
+    }
   }
 
   a {
@@ -124,6 +128,9 @@ export const FooterStyled = styled.footer`
     img {
       height: auto;
       width: 140px;
+    }
+    .footer-group {
+      width: 100% !important;
     }
 
     .group-column div a {
