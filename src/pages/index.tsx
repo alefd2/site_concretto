@@ -5,7 +5,6 @@ import styles from "@/styles/Home.module.css";
 import styled from "styled-components";
 import VideoPage from "@/components/Home/VideoPage";
 import AdvantagesPage from "@/components/Home/AdvantagesPage";
-import CarrouselResponsible from "@/components/BackgroundSlider/CarrouselResponsible";
 import Header from "@/components/Home/Header";
 import YouWant from "@/components/Home/YouWant";
 import ContentPage from "@/components/Home/CardsPage";

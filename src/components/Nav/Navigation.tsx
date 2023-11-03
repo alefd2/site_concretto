@@ -40,7 +40,7 @@ const Navigation = () => {
             <ItensNav toggleMenu={toggleMenu} link="/" routeName="Home" />
             <ItensNav
               toggleMenu={toggleMenu}
-              link="/#us"
+              link="/purpose"
               routeName="Nosso Propósito"
             />
             <li onClick={toggleMenu} className="action">
@@ -53,7 +53,7 @@ const Navigation = () => {
             <ItensNav toggleMenu={toggleMenu} link="/" routeName="Home" />
             <ItensNav
               toggleMenu={toggleMenu}
-              link="/#us"
+              link="/purpose"
               routeName="Nosso Propósito"
             />
             <li onClick={toggleMenu} className="action">
