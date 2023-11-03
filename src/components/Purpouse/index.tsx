@@ -157,7 +157,7 @@ interface ImageProps {
   isLeft: boolean;
 }
 
-const BackgroundWithImage = styled.div<ImageProps>`
+export const BackgroundWithImage = styled.div<ImageProps>`
   width: 100%;
   background-color: #484646;
   padding: 20px 20px;

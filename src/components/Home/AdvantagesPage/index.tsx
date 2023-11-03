@@ -1,19 +1,5 @@
 import Image from "next/image";
 import styled from "styled-components";
-import {
-  FaClock,
-  FaExchangeAlt,
-  FaBuilding,
-  FaUsers,
-  FaWallet,
-  FaCog,
-  FaFileDownload,
-  FaCreditCard,
-  FaArrowRight,
-  FaComment,
-  FaBell,
-  FaWhatsapp,
-} from "react-icons/fa";
 
 import alarm from "../../../../public/assets/icons/advantages/alarm.svg";
 import check from "../../../../public/assets/icons/advantages/check.svg";
@@ -113,7 +99,11 @@ export default function AdvantagesPage() {
           <Link href={"/"}>
             <Image src={apple} alt="apple" />
           </Link>
-          <Link href={"/"}>
+          <Link
+            href={
+              "https://play.google.com/store/apps/details?id=br.com.concrettotech.mobileconcretto&hl=pt_BR&gl=US"
+            }
+          >
             <Image src={play} alt="play" />
           </Link>
         </div>

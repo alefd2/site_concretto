@@ -44,7 +44,9 @@ const Navigation = () => {
               routeName="Nosso Propósito"
             />
             <li onClick={toggleMenu} className="action">
-              <Link href="/#baixar">Baixe o App</Link>
+              <Link href="https://play.google.com/store/apps/details?id=br.com.concrettotech.mobileconcretto&hl=pt_BR&gl=US">
+                Baixe o App
+              </Link>
             </li>
           </MobileMenu>
         )}
@@ -57,7 +59,9 @@ const Navigation = () => {
               routeName="Nosso Propósito"
             />
             <li onClick={toggleMenu} className="action">
-              <Link href="/#baixar">Baixe o App</Link>
+              <Link href="https://play.google.com/store/apps/details?id=br.com.concrettotech.mobileconcretto&hl=pt_BR&gl=US">
+                Baixe o App
+              </Link>
             </li>
           </DesktopMenu>
         )}
