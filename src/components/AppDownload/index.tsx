@@ -59,6 +59,13 @@ const WrapperPageStyled = styled.div`
 
     margin: 100px 0;
   }
+
+  @media (max-width: 425px) {
+    img {
+      width: 140px;
+      height: auto;
+    }
+  }
 `;
 
 interface ImageProps {
