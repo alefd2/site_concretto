@@ -160,7 +160,7 @@ export const PolicyPage = () => {
           <br />
 
           <p>
-            Esta política é efetiva a partir de<strong>Setembro/2020.</strong>
+            Esta política é efetiva a partir de<strong> Setembro/2020.</strong>
           </p>
         </article>
       </div>

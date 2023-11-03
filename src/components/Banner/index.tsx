@@ -123,12 +123,10 @@ const BannerText = styled.div<TextProps>`
   }
 
   @media (max-width: 768px) {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
+    width: 70%;
 
     h1 {
+      width: 100%;
       font-size: 30px;
     }
 
@@ -139,11 +137,16 @@ const BannerText = styled.div<TextProps>`
   }
 
   @media (max-width: 425px) {
+    width: 100vw;
+    text-align: left;
+
     h1 {
+      width: 80%;
       font-size: 22px;
     }
 
     p {
+      width: 80%;
       font-size: 14px;
     }
 
