@@ -135,17 +135,24 @@ const WrapperPageStyled = styled.div`
         width: 50%;
       }
 
-      @media (max-width: 425px) {
+      @media (max-width: 573px) {
+        .um {
+          width: 80%;
+        }
+
         .dois img {
-          width: 300px;
-          margin-left: 160px;
+          position: absolute;
+
+          width: 200px;
+          margin-left: -20px;
         }
       }
-
-      @media (max-width: 425px) {
-        .dois img {
-          width: 300px;
-          margin-left: 260px;
+      @media (max-width: 375px) {
+        .um {
+          width: 100%;
+        }
+        .dois {
+          display: none;
         }
       }
     }
